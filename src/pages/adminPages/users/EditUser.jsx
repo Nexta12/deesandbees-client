@@ -3,7 +3,7 @@ import SubTitle from "@components/subTitle/SubTitle";
 import EnhancedInput from "@components/FormUI/EnhancedInput";
 import EnhancedSelect from "@components/FormUI/EnhancedSelect";
 import Button from "@components/button/Button";
-import styles from "./AddUser.module.scss"; 
+import styles from "./Adduser.module.scss"; 
 import { apiClient } from "@api/apiClient";
 import { endpoints } from "@api/endpoints";
 import { toast, ToastContainer } from "react-toastify";

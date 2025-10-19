@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "pm2 start npm --name 'Dees-client' -- run preview -- --host 0.0.0.0",
-    "start": "pm2 restart Dees-client"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview --host 0.0.0.0",
+  "deploy": "pm2 start npm --name 'Dees-client' -- run preview",
+  "start": "pm2 restart Dees-client"
+},
   "dependencies": {
     "@tanstack/react-table": "^8.21.3",
     "aos": "^2.3.4",

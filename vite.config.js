@@ -24,7 +24,7 @@ export default defineConfig({
     },
   },
    preview: {
-    port: 3307,
+    port: 3308,
     allowedHosts: ['deesandbees.revplusclient.com']
   },
 })

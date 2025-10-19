@@ -1,0 +1,155 @@
+@use "../../../../styles/index" as *;
+
+.whySection {
+  background: linear-gradient(135deg, $deep-green, $btn-green );
+  color: #fff;
+  text-align: center;
+  padding: 80px 100px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+      flex: 1;
+      min-width: 250px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+      }
+
+      svg {
+        font-size: 2rem;
+        color: $orange;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .whySection {
+    padding: 70px 60px;
+
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cards {
+      gap: 1.5rem;
+
+      div {
+        padding: 1.8rem;
+
+        svg {
+          font-size: 2rem;
+        }
+
+        h4 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile View (≤768px) */
+@media (max-width: 768px) {
+  .whySection {
+    padding: 60px 25px;
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      div {
+        width: 100%;
+        max-width: 380px;
+        padding: 1.6rem;
+        text-align: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          transform: none; // disable hover jump for mobile
+        }
+
+        svg {
+          font-size: 1.8rem;
+        }
+
+        h4 {
+          font-size: 1.05rem;
+        }
+
+        p {
+          font-size: 0.88rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 400px) {
+  .whySection {
+    
+    padding: 50px 15px;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .cards {
+      gap: 1.2rem;
+
+      div {
+        padding: 1.3rem;
+        border-radius: 10px;
+
+        svg {
+          font-size: 1.6rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          line-height: 1.5;
+        }
+      }
+    }
+
+  }
+}

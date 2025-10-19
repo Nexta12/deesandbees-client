@@ -1,0 +1,41 @@
+// src/styles/global.scss
+
+// @import './_variable';
+// @import './_mixins';
+
+@use './index' as *;
+
+:root {
+  // Font Families
+  --font-poppins: #{$font-poppins};
+  --font-mulish: #{$font-mulish};
+  --font-dancing: #{$font-dancing};
+
+  // Colors
+  --primary-color: #{$primary-color};
+  --deep-green: #{$deep-green};
+  --light-green: #{$light-green};
+  --very-light-green: #{$very-light-green};
+  --btn-green: #{$btn-green};
+  --orange: #{$orange};
+  --bg-green: #{$bg-green};
+  --bg-gray: #{$bg-gray};
+}
+
+// Base Reset + Typography
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-poppins;
+  background-color: $bg-gray;
+  color: $primary-color;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

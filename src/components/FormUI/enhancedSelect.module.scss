@@ -1,0 +1,38 @@
+@use "../../styles/index" as *;
+
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+
+  label {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $font-mulish;
+    color: #333;
+
+    span {
+      color: red;
+      margin-left: 4px;
+    }
+  }
+
+  select {
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    background-color: #fff;
+
+    &:focus {
+      border-color: #28B16D; // main green
+      outline: none;
+    }
+
+    option {
+      color: #333;
+    }
+  }
+}

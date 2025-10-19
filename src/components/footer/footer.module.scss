@@ -1,0 +1,105 @@
+@use "../../styles/index" as *;
+
+.container {
+    @include container-style(40px 130px);
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: #dddbdb;
+        font-size: 16px;
+        .logo{
+            width: 100px;
+            height: auto;
+            object-fit: cover;
+        }
+        .contactInfo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .sectionContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        svg {
+            color: #fff;
+            font-size: 23px;
+        }
+
+        .headingTitle {
+            color: #fff !important;
+            text-align: left !important;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .navItems {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            color: #fff !important;
+
+
+        }
+
+        .feeds {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .openHours {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: #fff;
+            font-size: 14px;
+
+            .hourRow {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 4px;
+            }
+        }
+
+    }
+}
+
+
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+
+    .container {
+        @include container-style(40px 40px);
+        gap: 50px;
+
+        .sectionContainer {
+
+            .feeds {
+                gap: 8px;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,192 @@
+@use '../../styles/index' as *;
+
+
+section {
+  position: relative;
+}
+
+
+.header {
+  width: 100vw;
+  background-color: $bg-green;
+  padding: 10px 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+}
+
+.logoContainer {
+  flex: 1;
+
+  .logo {
+    width: 60px !important;
+    height: 74p;
+
+  }
+}
+
+
+.navlink {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+.link {
+  position: relative;
+  font-weight: 500;
+  font-family: $font-mulish;
+  font-size: 18px;
+  color: $primary-color;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: $light-green;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+// Active class
+.active {
+  color: $light-green;
+
+  &::before {
+    width: 100%;
+  }
+}
+
+
+
+.rightButton {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.menuToggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: $primary-color;
+}
+
+.mobileMenu {
+  display: none;
+  z-index: 100;
+}
+
+
+
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  .topBar {
+    justify-content: center;
+    padding: 15px 6px;
+    gap: 5px;
+    overflow-x: hidden;
+
+    .socialIcons {
+
+      gap: 5px;
+      font-size: 12px;
+      text-decoration: none;
+      color: white;
+
+      svg {
+        font-size: 10px;
+        display: inline-block;
+      }
+
+      span {
+        line-height: 1;
+      }
+    }
+
+
+  }
+
+  .headerWrapper {
+    position: relative;
+  }
+
+  .header {
+
+    padding: 20px;
+
+  }
+
+  .navlink,
+  .rightButton {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-gray;
+    padding: 1rem;
+    width: 100%;
+    gap: 0.5rem;
+    border-top: 1px solid #ccc;
+
+    position: absolute;
+
+    .mobileLink {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: $font-mulish;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid #ccc;
+      background-color: transparent;
+      color: $primary-color;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+    }
+
+    .active {
+      background-color: $deep-green;
+      color: white;
+      border: none;
+    }
+
+    .mobileButton {
+      margin-top: 10px;
+    }
+
+    .lightOrange {
+      background-color: rgba($orange, 0.7); // lighter orange
+      font-weight: 500;
+      width: 100%;
+    }
+  }
+
+
+}

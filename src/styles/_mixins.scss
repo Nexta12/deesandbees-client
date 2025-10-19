@@ -1,0 +1,70 @@
+// src/styles/_mixins.scss
+
+@use './variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin heading($min: 1.25rem, $max: 2.5rem, $padding: 0, $lineHeight: 1.3, $transform: uppercase) {
+  font-size: clamp($min, 2vw, $max);
+  text-transform: $transform;
+  line-height: $lineHeight;
+  padding: $padding;
+  font-family: $font-poppins;
+  font-weight: 700;
+}
+
+@mixin subtitle(
+  $size: 22px,
+  $weight: 600,
+  $spacing: 0.04em,
+  $lineHeight: 1,
+  $align: center,
+  $color: #666666,
+  $font: $font-poppins
+) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: $spacing;
+  line-height: $lineHeight;
+  text-align: $align;
+  color: $color;
+}
+
+@mixin subtitle-script {
+  @include subtitle(22px, 600, 0.04em, 1, center, $deep-green, $font-dancing);
+}
+
+
+@mixin button-style($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-family: $font-mulish;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+@mixin container-style($padding: 130px, $bg: null) {
+  width: 100%;
+  overflow-x: hidden;
+  padding: $padding;
+  align-items: center;
+  text-align: justify;
+
+  @if $bg != null {
+    background: $bg;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

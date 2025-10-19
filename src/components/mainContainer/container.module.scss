@@ -1,0 +1,19 @@
+// src/components/container/container.module.scss
+@use '../../styles/index' as *;
+
+.container {
+  @include container-style();
+}
+
+// Optional background variants
+.gray-bg {
+  @include container-style(130px, $bg-gray);
+}
+
+.green-bg {
+  @include container-style(130px, $bg-green);
+}
+
+.bg-image {
+  @include container-style(130px, url('/images/banner.jpg'));
+}

@@ -1,0 +1,43 @@
+@use "../../../../../styles/index" as *;
+
+.SingleTestCard{
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0px 10px;
+
+.userImgContainer{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2px;
+
+
+
+}
+.userNameContainer{
+    text-transform: uppercase;
+    font-weight: 400;
+   
+    span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      svg {
+        color: $btn-green;
+        gap: 2px;
+      }
+    }
+}
+}

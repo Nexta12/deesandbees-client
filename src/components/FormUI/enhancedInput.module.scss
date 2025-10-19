@@ -1,0 +1,32 @@
+@use "../../styles/index" as *;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+
+  label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: $font-mulish;
+    span {
+      color: red;
+      margin-left: 4px;
+    }
+  }
+
+  input {
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: #28B16D; // your main green
+      outline: none;
+    }
+  }
+}

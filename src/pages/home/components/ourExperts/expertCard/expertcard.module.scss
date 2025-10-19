@@ -1,0 +1,130 @@
+@use "../../../../../styles/index" as *;
+.singleCard{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 20px;
+
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .titleBox{
+    padding: 30px;
+    background-color: #FAFAFA;
+    border: .5px solid lightgrey;
+    width: 80%;
+    margin-top: -60px;
+    border-radius: 20px 20px 0 0px;
+    z-index: 10;
+
+    p{
+        letter-spacing: 4%;
+    }
+    span {
+        border: 1px solid $light-green;
+        border-radius: 50px;
+        padding: 2px 16px;
+        font-size: 14px;
+        margin-top: 4px;
+        cursor: pointer;
+
+      &:hover{
+        background-color: $deep-green;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+
+ .icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: $deep-green;
+  cursor: pointer;
+  font-size: 18px;
+
+ }
+} 
+.singleCardFeaured{
+  background-color: $btn-green;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 20px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+
+
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .titleBoxFeatured{
+    padding: 20px;
+    background-color: $bg-green;
+    border: .5px solid lightgrey;
+    width: 85%;
+    margin-top: -60px;
+    border-radius: 20px 20px 0 0px;
+    z-index: 10;
+
+    .weekBest{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 14px;
+      color: $orange;
+      div{
+        font-size: 13px;
+      }
+    }
+
+    p{
+        letter-spacing: 4%;
+    }
+    span {
+        border: 1px solid $light-green;
+        border-radius: 50px;
+        padding: 2px 16px;
+        font-size: 14px;
+        margin-top: 4px;
+        cursor: pointer;
+
+      &:hover{
+        background-color: $deep-green;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+
+  small{
+    color: #fff;
+  }
+
+ .icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #FAFAFA;
+  cursor: pointer;
+  font-size: 18px;
+
+ }
+} 

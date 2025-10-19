@@ -1,0 +1,10 @@
+
+@use '../../styles/index' as *;
+
+.subtitle {
+  @include subtitle(); // default subtitle mixin
+}
+
+.subtitle--script {
+  @include subtitle(22px, 600, 0.04em, 1, center, $deep-green, $font-dancing);
+}

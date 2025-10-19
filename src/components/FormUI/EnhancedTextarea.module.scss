@@ -1,0 +1,32 @@
+@use "../../styles/index" as *;
+
+.textareaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: $font-mulish;
+    color: #333;
+    span {
+      color: red;
+      margin-left: 4px;
+    }
+  }
+
+  textarea {
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: #28B16D;
+      outline: none;
+    }
+  }
+}

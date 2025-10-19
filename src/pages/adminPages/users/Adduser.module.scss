@@ -1,0 +1,41 @@
+@use "../../../styles/index" as *;
+
+form {
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: $font-mulish;
+    margin-bottom: 16px;
+    color: $deep-green;
+  }
+
+  button {
+    font-size: 12px;
+    align-self: center;
+    text-transform: capitalize !important;
+    padding: 8px 15px !important;
+    width: 50% !important;
+    margin-top: 15px;
+    
+  }
+
+  .formContent{
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+
+    .inputContainer{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+
+    .inputContainer{
+     flex-direction: column;
+    }
+}

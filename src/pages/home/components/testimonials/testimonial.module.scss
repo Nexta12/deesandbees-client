@@ -1,0 +1,29 @@
+@use "../../../../styles/index" as *;
+
+.container{
+ @include container-style(60px 100px);
+ background-color: #FFF;
+ height: 550px;
+
+ .textContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 60px;
+ }
+
+
+}
+
+@media (max-width: 768px) {
+
+ .container{
+ @include container-style(60px 20px);
+
+
+}
+}
+
+

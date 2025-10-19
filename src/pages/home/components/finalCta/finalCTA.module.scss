@@ -1,0 +1,33 @@
+@use "../../../../styles/index" as *;
+.cta {
+  background: linear-gradient(135deg, $deep-green, $light-green);
+  color: #fff;
+  text-align: center;
+  padding: 80px 40px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  button {
+    background: #fff;
+    color: $deep-green;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: $btn-green;
+      color: #fff;
+    }
+  }
+}

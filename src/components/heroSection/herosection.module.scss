@@ -1,0 +1,123 @@
+@use "../../styles/index" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 80vh, 650px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transition: background 0.4s ease;
+
+    &.dark {
+      background: rgba(0, 0, 0, 0.6); // slightly darker
+    }
+
+    &.light {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    &.left {
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    &.right {
+      text-align: right;
+      align-items: flex-end;
+    }
+
+    &.center {
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  .smallTitle {
+    color: $orange;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .title {
+    font-family: $font-mulish;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .description {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #f3f3f3;
+  }
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    height: 450px;
+
+    .content {
+      padding: 1.5rem;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 400px;
+
+    .content {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+    }
+  }
+}

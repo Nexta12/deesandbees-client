@@ -1,0 +1,41 @@
+// Custom arrow styles
+.slick-arrow {
+ position: absolute;
+ top: 45%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  background: transparent !important; 
+  border: 1px solid rgba(255, 255, 255, 0.5); 
+  color: white !important; 
+  z-index: 10; 
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: white; 
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  // Position inside slider
+  &.slick-prev {
+    left: 60px !important;
+   
+  }
+
+  &.slick-next {
+    right: 60px !important; 
+  }
+
+  //Hide default arrows (if not using custom component)
+  // &::before {
+  //  display: none !important;
+  // }
+}
+
+
+@media (max-width: 768px) {
+
+  .slick-arrow {
+    display: none;
+  }
+}

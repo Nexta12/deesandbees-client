@@ -29,7 +29,7 @@ export const HeroSliderData = [
     bottomText:
       "Join thousands of students achieving success through Dees & Bees Global.",
     buttonText: "Discover Opportunities",
-    buttonLink: paths.about,
+    buttonLink: paths.aboutUs,
     slideImage: Slider3,
   },
 ];

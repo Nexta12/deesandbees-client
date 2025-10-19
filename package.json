@@ -1,5 +1,5 @@
 {
-  "name": "happies",
+  "name": "deesandbees",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "pm2 start npm --name 'happies-client' -- run preview -- --host 0.0.0.0",
-    "start": "pm2 restart happies-client"
+    "deploy": "pm2 start npm --name 'Dees-client' -- run preview -- --host 0.0.0.0",
+    "start": "pm2 restart Dees-client"
   },
   "dependencies": {
     "@tanstack/react-table": "^8.21.3",

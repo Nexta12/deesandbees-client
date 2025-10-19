@@ -24,7 +24,7 @@ export default defineConfig({
     },
   },
    preview: {
-    port: 3301,
-    allowedHosts: ['happies.dataactions.com']
+    port: 3307,
+    allowedHosts: ['deesandbees.revplusclient.com']
   },
 })

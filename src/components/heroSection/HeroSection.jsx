@@ -1,5 +1,5 @@
 import { motion as Motion } from "framer-motion";
-import styles from "./HeroSection.module.scss";
+import styles from "./HeroSection.module.scss"
 import Button from "@components/button/Button";
 
 const HeroSection = ({

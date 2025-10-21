@@ -1,7 +1,7 @@
 import styles from "./contact.module.scss"
 
 import HeroSection from "@components/heroSection/HeroSection"
-import b1 from "@assets/img/sliders/5.jpg"
+import b1 from "@assets/img/sliders/b5.jpg"
 import ContactForm from "./components/ContactForm"
 
 const ContactUs = () => {

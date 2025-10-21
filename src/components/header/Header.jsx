@@ -25,6 +25,7 @@ const Header = () => {
             <Link to="/" className={styles.logoContainer}>
               <img src={Logo} alt="Logo" className={styles.logo} />
             </Link>
+           
 
             {/* Desktop Nav */}
             <div className={styles.navlink}>
@@ -40,6 +41,7 @@ const Header = () => {
                 </NavLink>
               ))}
             </div>
+           
 
             {/* Desktop Button */}
             <div className={styles.rightButton}>

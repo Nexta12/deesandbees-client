@@ -76,6 +76,11 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+.quickActions {
+ h4 {
+   margin: 10px 0 !important;
+ }
+}
 
 .quickActions button {
   background: $btn-green;

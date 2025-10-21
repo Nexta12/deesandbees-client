@@ -5,14 +5,41 @@ import TestCard from "./testimonialCard/TestCard"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { TestimonialData } from "@data/TestimonialData";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { ErrorFormatter } from "@utils/helpers";
+import { apiClient } from "@api/apiClient";
+import { endpoints } from "@api/endpoints";
 
 const Testimonials = () => {
+
+  const [testData, setTestData] = useState([]);
+
+  useEffect(()=>{
+     const fetchTestimonials = async () =>{
+
+      try {
+
+        const res = await apiClient.get(endpoints.fetchTestimonials);
+
+        setTestData(res.data.data)
+        
+      } catch (error) {
+        toast.error(ErrorFormatter(error))
+      }
+     }
+
+     fetchTestimonials()
+
+  },[]);
+
+
 
   const settings = {
   dots: true,
   speed: 2000,
   arrows: false,
+  infinite: testData.length > 2,
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
@@ -40,11 +67,12 @@ const Testimonials = () => {
              <HeadingText>Testimonials</HeadingText>
               <small>Real stories from happy clients who have tasted our food, booked our halls, and celebrated with us. <br/> See why they love Happies!</small>
           </div>
+      
 
           <div className={styles.cardContent}>
             <Slider {...settings} >
-            {TestimonialData.map((item)=>(
-               <TestCard key={item.id} title={item.title} description={item.description} userImg={item.userImg} userName={item.userName} />
+            {testData.map((item)=>(
+               <TestCard key={item.id} description={item.message} userName={item.fullName} />
             ))}
             </Slider>
           </div>

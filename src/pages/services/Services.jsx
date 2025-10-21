@@ -1,4 +1,4 @@
-import b1 from "@assets/img/sliders/5.jpg";
+import b1 from "@assets/img/sliders/s2.jpg";
 import HeroSection from "@components/heroSection/HeroSection";
 import { handleScrollIntoView } from "@utils/helpers";
 import {

@@ -1,5 +1,5 @@
 import HeroSection from "@components/heroSection/HeroSection";
-import b1 from "@assets/img/sliders/s4.jpg";
+import b1 from "@assets/img/sliders/b5.jpg";
 import { FaGlobe, FaUsers, FaLightbulb, FaHandsHelping, FaAward, FaBalanceScale } from "react-icons/fa";
 import { handleScrollIntoView } from "@utils/helpers";
 import "./AboutUs.scss";

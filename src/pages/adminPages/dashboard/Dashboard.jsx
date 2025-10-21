@@ -45,6 +45,7 @@ const Dashboard = () => {
 
           <div className={styles.quickActions}>
             <h4>Quick Actions</h4>
+
             <div className={styles.buttons}>
               <button onClick={() => setModalOpen(true)}>Add User</button>
               <button onClick={() => navigate(paths.messages)}>
@@ -54,6 +55,7 @@ const Dashboard = () => {
                 New Testimonial
               </button>
             </div>
+            
           </div>
         </div>
       </div>

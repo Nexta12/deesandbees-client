@@ -14,16 +14,16 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       </div>
 
       <nav className={styles.nav}>
-        <NavLink to={paths.admin} end>
+        <NavLink onClick={() => setIsOpen(false)} to={paths.admin} end>
           <FiHome /> Dashboard
         </NavLink>
-        <NavLink to={paths.users}>
+        <NavLink onClick={() => setIsOpen(false)} to={paths.users}>
           <FiUsers /> Account
         </NavLink>
-        <NavLink to="/admin/testimonials">
+        <NavLink onClick={() => setIsOpen(false)} to="/admin/testimonials">
           <FiStar /> Testimonials
         </NavLink>
-        <NavLink to="/admin/messages">
+        <NavLink onClick={() => setIsOpen(false)} to="/admin/messages">
           <FiMessageCircle /> Messages
         </NavLink>
       </nav>

@@ -5,10 +5,22 @@ import SubTitle from "@components/subTitle/SubTitle";
 import { NavMenu } from "@data/MenuData";
 import { TbSeparator } from "react-icons/tb";
 import { openHours } from "@data/OpeningHours";
+import { useAuth } from "@contexts/useAuth";
 
 const Footer = () => {
+  const { user, logout } = useAuth();
+
+  const dynamicMenu = user
+    ? NavMenu.map(item =>
+        item.title === "Login"
+          ? { title: "Logout", link: "#", action: logout }
+          : item
+      )
+    : NavMenu;
+
   return (
     <div className={styles.container}>
+      {/* Company Info */}
       <div className={styles.details}>
         <Link to="/">
           <img src={Logo} alt="Logo" className={styles.logo} />
@@ -28,29 +40,41 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Links Section */}
       <div className={styles.sectionContainer}>
-        <div className="">
-          <SubTitle className={styles.headingTitle}> LINKS </SubTitle>
+        <div>
+          <SubTitle className={styles.headingTitle}>LINKS</SubTitle>
           <TbSeparator />
         </div>
+
         <div className={styles.navItems}>
-          {NavMenu.map((item) => (
-            <NavLink
-              key={item.title}
-              to={item.link}
-              className={({ isActive }) =>
-                isActive ? `${styles.link} ${styles.active}` : styles.link
-              }
-            >
-              {item.title}
-            </NavLink>
-          ))}
+          {dynamicMenu.map((item) =>
+            item.title === "Logout" ? (
+              <NavLink
+                key={item.title}
+                onClick={item.action}
+                className={styles.link}
+              >
+                {item.title}
+              </NavLink>
+            ) : (
+              <NavLink
+                key={item.title}
+                to={item.link}
+                className={({ isActive }) =>
+                  isActive ? `${styles.link} ${styles.active}` : styles.link
+                }
+              >
+                {item.title}
+              </NavLink>
+            )
+          )}
         </div>
       </div>
 
-  
+      {/* Open Hours Section */}
       <div className={styles.sectionContainer}>
-        <div className="">
+        <div>
           <SubTitle className={styles.headingTitle}>OPEN HOURS</SubTitle>
           <TbSeparator />
         </div>

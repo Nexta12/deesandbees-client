@@ -7,47 +7,63 @@ import { NavMenu } from "@data/MenuData";
 import { useState } from "react";
 import Modal from "@components/modal/Modal";
 import OrderForm from "@components/orderForm/OrderForm";
+import { useAuth } from "@contexts/useAuth";
 
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
+  const { user, logout } = useAuth(); 
 
+  // compute the menu dynamically
+  const dynamicMenu = user
+    ? NavMenu.map(item =>
+        item.title === "Login"
+          ? { title: "Logout", link: "#", action: logout } // replace Login with Logout
+          : item
+      )
+    : NavMenu;
 
   return (
     <>
       <section className={styles.section}>
-     
         <div className={styles.headerWrapper}>
-          {/* Header */}
           <div className={styles.header}>
             {/* Logo */}
             <Link to="/" className={styles.logoContainer}>
               <img src={Logo} alt="Logo" className={styles.logo} />
             </Link>
-           
 
             {/* Desktop Nav */}
             <div className={styles.navlink}>
-              {NavMenu.map((item, i) => (
-                <NavLink
-                  key={i}
-                  to={item.link}
-                  className={({ isActive }) =>
-                    isActive ? `${styles.link} ${styles.active}` : styles.link
-                  }
-                >
-                  {item.title}
-                </NavLink>
-              ))}
+              {dynamicMenu.map((item, i) =>
+                item.title === "Logout" ? (
+                  <NavLink
+                    key={i}
+                    onClick={item.action}
+                    className={styles.link}
+                  >
+                    {item.title}
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    key={i}
+                    to={item.link}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.link} ${styles.active}`
+                        : styles.link
+                    }
+                  >
+                    {item.title}
+                  </NavLink>
+                )
+              )}
             </div>
-           
 
             {/* Desktop Button */}
             <div className={styles.rightButton}>
-              <Button onClick={() => setModalOpen(true)}>
-                Apply Now
-              </Button>
+              <Button onClick={() => setModalOpen(true)}>Apply Now</Button>
             </div>
 
             {/* Mobile Toggle */}
@@ -60,28 +76,43 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Dropdown */}
-
           {isMobileMenuOpen && (
             <div className={styles.mobileMenu}>
-              {NavMenu.map((item, i) => (
-                <NavLink
-                  key={i}
-                  to={item.link}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.mobileLink} ${styles.active}`
-                      : styles.mobileLink
-                  }
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.title}
-                </NavLink>
-              ))}
+              {dynamicMenu.map((item, i) =>
+                item.title === "Logout" ? (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      item.action();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={styles.mobileLink}
+                  >
+                    {item.title}
+                  </button>
+                ) : (
+                  <NavLink
+                    key={i}
+                    to={item.link}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.mobileLink} ${styles.active}`
+                        : styles.mobileLink
+                    }
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.title}
+                  </NavLink>
+                )
+              )}
 
               {/* Mobile Button */}
               <div className={styles.mobileButton}>
-                <Button onClick={() => setModalOpen(true)} className={styles.lightOrange}>
-                   Apply Now
+                <Button
+                  onClick={() => setModalOpen(true)}
+                  className={styles.lightOrange}
+                >
+                  Apply Now
                 </Button>
               </div>
             </div>
@@ -92,9 +123,8 @@ const Header = () => {
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <OrderForm onSuccess={() => setModalOpen(false)} />
       </Modal>
-
     </>
   );
-};
+};;
 
 export default Header;

@@ -1,6 +1,8 @@
 export const endpoints = {
-    createOrder: "/api/v1/order/create",
     login: "/api/v1/secure/login",
+    forgotPassword: "/api/v1/secure/forgotPassword",
+    verifyOtp: "/api/v1/secure/verifyOtp",
+    resetPassword: "/api/v1/secure/resetPassword",
     validateAuth: "/api/v1/secure/validate",
     createUser: "/api/v1/user/create",
     fetchUsers: "/api/v1/user/all",

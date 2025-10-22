@@ -16,6 +16,8 @@ import Users from "@pages/adminPages/users/Users";
 import Testimonials from "@pages/adminPages/testimonials/Testimonials";
 import Messages from "@pages/adminPages/messages/Messages";
 import Dashboard from "@pages/adminPages/dashboard/Dashboard";
+import VerifyOtp from "@pages/verifyOtp/VerifyOtp";
+import ResetPassword from "@pages/resetPassword/ResetPassword";
 
 
 const AppRoutes = () => (
@@ -30,6 +32,8 @@ const AppRoutes = () => (
     <Route path={paths.contactUs} element={<ContactUs />} />
     <Route path={paths.Login} element={<Login />} />
     <Route path={paths.forgotPassword} element={<ForgotPassword />} />
+    <Route path={paths.otpPage} element={<VerifyOtp />} />
+    <Route path={paths.resetPassword} element={<ResetPassword />} />
   
     </Route>
 

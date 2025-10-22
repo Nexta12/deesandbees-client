@@ -6,6 +6,8 @@ export const paths = {
     contactUs: "/contact-us",
     Login: "/login",
     forgotPassword: "/forgot-password",
+    resetPassword: "/reset-password",
+    otpPage: "/otp",
 
    // Admin 
     admin: '/admin',

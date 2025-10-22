@@ -5,23 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background: $very-light-green;
   padding: 2rem;
 }
 
 .loginBox {
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   padding: 3rem 2.5rem;
   max-width: 420px;
   width: 100%;
   text-align: center;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-  }
 }
 
 .title {
@@ -40,11 +35,11 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .actions {
-  margin-top: 1rem;
+  margin-top: 1px;
 }
 
 .loginBtn {
@@ -56,10 +51,6 @@
   padding: 0.9rem;
   transition: background 0.3s ease;
 
-  &:hover {
-    background: #0056d2;
-  }
-
   &:disabled {
     background: #b3d4ff;
     cursor: not-allowed;
@@ -67,7 +58,7 @@
 }
 
 .footerText {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
   color: #555;
 
@@ -78,6 +69,7 @@
   .link {
     color: #007bff;
     text-decoration: none;
+    font-size: 13px;
     font-weight: 500;
 
     &:hover {

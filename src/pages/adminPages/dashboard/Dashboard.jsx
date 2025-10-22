@@ -1,20 +1,38 @@
 import Calender from "@components/calender/Calender";
 import styles from "./Dashboard.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddUser from "../users/AddUser";
 import Modal from "@components/modal/Modal";
 import { paths } from "@routes/path";
 import { useNavigate } from "react-router-dom";
 import AddTestimonials from "../testimonials/AddTestimonials";
+import { toast } from "react-toastify";
+import { ErrorFormatter } from "@utils/helpers";
+import { apiClient } from "@api/apiClient";
+import { endpoints } from "@api/endpoints";
 
 const Dashboard = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isTestModalOpen, setTestModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [dashStats, setDashStats] = useState(null);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const respons = await apiClient.get(endpoints.fetchStats);
+        setDashStats(respons.data.stats);
+      } catch (error) {
+        toast.error(ErrorFormatter(error));
+      }
+    };
+    fetchStats();
+  }, []);
+
   const stats = [
-    { label: "Users", value: 120 },
-    { label: "Testimonials", value: 25 },
-    { label: "Messages", value: 40 },
+    { label: "Users", value: dashStats?.totalUsers || 0 },
+    { label: "Testimonials", value: dashStats?.totalTestimonials || 0 },
+    { label: "Messages", value: dashStats?.totalMessages || 0 },
   ];
 
   return (
@@ -55,7 +73,6 @@ const Dashboard = () => {
                 New Testimonial
               </button>
             </div>
-            
           </div>
         </div>
       </div>

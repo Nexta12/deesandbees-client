@@ -128,7 +128,7 @@ const Users = () => {
       {/* 🧭 Loader */}
       {loading ? (
         <div className={styles.loaderBox}>
-          <PuffLoader size={60} color="#4866ff" />
+           <span>Loading...</span>
         </div>
       ) : (
         <DataTable

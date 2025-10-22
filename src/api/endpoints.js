@@ -6,6 +6,7 @@ export const endpoints = {
     validateAuth: "/api/v1/secure/validate",
     createUser: "/api/v1/user/create",
     fetchUsers: "/api/v1/user/all",
+    fetchStats: "/api/v1/user/stats",
     updateUser: "/api/v1/user/edit",
     deleteUser: "/api/v1/user/delete",
     fetchTestimonials:"/api/v1/testimonial/all",

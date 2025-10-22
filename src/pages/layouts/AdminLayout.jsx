@@ -25,7 +25,6 @@ const AdminLayout = () => {
     };
 
     verifyAuth();
-    // ❌ Don't include validateAuth in deps — it causes re-renders
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

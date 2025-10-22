@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { FiHome, FiUsers, FiMessageCircle, FiStar } from "react-icons/fi";
+import { FiHome, FiUsers, FiMessageCircle, FiStar, FiLogOut } from "react-icons/fi";
 import styles from "./Sidebar.module.scss";
 import { paths } from "@routes/path";
+import { useAuth } from "@contexts/useAuth";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
+  const { logout } = useAuth()
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
       <div className={styles.header}>
@@ -25,6 +27,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         </NavLink>
         <NavLink onClick={() => setIsOpen(false)} to="/admin/messages">
           <FiMessageCircle /> Messages
+        </NavLink>
+        <NavLink onClick={() => logout()}>
+          <FiLogOut /> Logout
         </NavLink>
       </nav>
     </aside>

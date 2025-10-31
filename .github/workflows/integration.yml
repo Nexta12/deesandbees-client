@@ -49,14 +49,16 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             set -e
+             echo "Loading NVM and Node environment..."
+             export NVM_DIR="$HOME/.nvm"
+             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-            # export NVM_DIR="$HOME/.nvm"
-            # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This grabs nvm
-            # nvm install 18
-            # nvm use 18
+             echo "Switching to Node 20..."
+             nvm use 20 || nvm install 20
 
-            echo "Changing directory to /www/wwwroot/clients/deesclient"
-            if ! cd /www/wwwroot/clients/deesclient ; then
+            echo "Changing directory to /www/wwwroot/client/deesClient"
+            if ! cd /www/wwwroot/client/deesClient ; then
               echo "Failed to change directory as required by me"
               exit 1
             fi
@@ -86,7 +88,7 @@ jobs:
             fi
 
             echo "Cleaning old build folder"
-            if ! rm -rf /www/wwwroot/clients/deesclient/dist; then
+            if ! rm -rf /www/wwwroot/client/deesClient/dist; then
             echo "Failed to clean the dist folder"
             exit 1
             fi

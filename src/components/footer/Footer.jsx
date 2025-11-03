@@ -35,7 +35,7 @@ const Footer = () => {
 
           <div className={styles.contactInfo}>
             <span>Email:</span>
-            <span>info@deesandbees.com</span>
+            <span>info@deesandbeesglobal.com</span>
           </div>
         </div>
       </div>

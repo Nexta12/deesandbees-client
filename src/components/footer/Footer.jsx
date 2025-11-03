@@ -69,6 +69,8 @@ const Footer = () => {
               </NavLink>
             )
           )}
+
+          <a href="https://webmail.deesandbeesglobal.com/" target="_blank" >Webmail</a>
         </div>
       </div>
 

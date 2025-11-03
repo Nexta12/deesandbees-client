@@ -65,7 +65,7 @@ const Testimonials = () => {
           <div className={styles.textContent}>
              <SubTitle font="script" >What People Say</SubTitle>
              <HeadingText>Testimonials</HeadingText>
-              <small>Real stories from happy clients who have tasted our food, booked our halls, and celebrated with us. <br/> See why they love Happies!</small>
+              {/* <small>Real stories from happy clients who have tasted our food, booked our halls, and celebrated with us. <br/> See why they love Happies!</small> */}
           </div>
       
 
